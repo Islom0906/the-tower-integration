@@ -1,0 +1,20 @@
+<svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip31_4131">
+			<rect id="Teacup 5" width="24.000000" height="24.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip31_4131)">
+		<path id="path" d="M6.27 2.02002L6.25 2C6.25 1.58008 6.58 1.25 7 1.25C7.42 1.25 7.75 1.58008 7.75 2L7.73 2.02002L6.27 2.02002ZM7.73 21.98L7.75 22C7.75 22.4199 7.42 22.75 7 22.75C6.58 22.75 6.25 22.4199 6.25 22L6.27 21.98L7.73 21.98Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+		<path id="path" d="M7 2L7 22" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="path" d="M3.27 2.52002L3.25 2.5C3.25 2.08008 3.58 1.75 4 1.75C4.42 1.75 4.75 2.08008 4.75 2.5L4.73 2.52002L3.27 2.52002ZM9.27 2.52002L9.25 2.5C9.25 2.08008 9.58 1.75 10 1.75C10.42 1.75 10.75 2.08008 10.75 2.5L10.73 2.52002L9.27 2.52002Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+		<path id="path" d="M4 2.5L4 7.5C4 10 7 10 7 10C7 10 10 10 10 7.5L10 2.5" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="path" d="M15 6C15 2 19 2 19 2L19 10.5L15 10.5L15 6Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+		<path id="path" d="M19.5 2L19.5 11L14.5 11L14.5 6C14.5 4.98242 14.7363 4.11914 15.209 3.41016C15.5914 2.83643 16.1139 2.38403 16.7764 2.05273C17.2379 1.82202 17.7434 1.66089 18.2928 1.56934C18.57 1.52319 18.8057 1.5 19 1.5L19.5 1.5L19.5 2ZM18.5 2L19 2L19 2.5C18.9702 2.5 18.9248 2.5022 18.8638 2.50659C18.7335 2.51587 18.598 2.53223 18.4572 2.55566C18.0066 2.63086 17.5954 2.76123 17.2236 2.94727C16.0745 3.52173 15.5 4.53931 15.5 6L15.5 10.5L15 10.5L15 10L19 10L19 10.5L18.5 10.5L18.5 2Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+		<path id="path" d="M19 10.5L15 10.5L15 6C15 2 19 2 19 2L19 10.5ZM19.73 21.98L19.75 22C19.75 22.4199 19.42 22.75 19 22.75C18.58 22.75 18.25 22.4199 18.25 22L18.27 21.98L19.73 21.98Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+		<path id="path" d="M19 10.5L15 10.5L15 6C15 2 19 2 19 2L19 10.5L19 22" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+	</g>
+</svg>

@@ -1,0 +1,168 @@
+{
+  "translation": {
+    "navbar": {
+      "home": "Asosiy",
+      "about": "Biz haqimizda",
+      "rooms": "Honalar",
+      "gallery": "Suratlar",
+      "contact": "Aloqa",
+      "news": "Yangiliklar",
+      "searching": "Xona qidiring"
+    },
+    "lang": {
+      "ru": "rus",
+      "en": "ingliz",
+      "uz": "o'zbek"
+    },
+    "notFound": {
+      "text": "Hona topilmadi"
+    },
+    "btn": {
+      "more": "Batafsil",
+      "booking": "Band qilish",
+      "readMore": "Ko'proq o'qish",
+      "allNums": "Barcha xonalar",
+      "viewAllPhoto": "Barcha suratlarni ko'rish",
+      "allNews": "Barcha yangiliklar",
+      "sendMesseng": "Jo'natish"
+    },
+    "footer": {
+      "menu": {
+        "title": "Yo'nalish",
+        "href1": "Mehmonxona haqida",
+        "href2": "Xonalar",
+        "href3": "Fotogalereya",
+        "href4": "Yangiliklar",
+        "href5": "Aloqa"
+      },
+      "address": {
+        "title": "Manzil"
+      },
+      "manager": {
+        "title": "Yangiliklarimizni kuzatib boring"
+      },
+      "miniFooter": {
+        "allrights": "The Tower Hotel. Barcha huquqlar himoyalangan.",
+        "siteCreated": "Veb-sayt yaratilgan:"
+      }
+    },
+    "links": {
+      "viewReviews": "Sharhlarni ko'rish"
+    },
+    "contact": {
+      "title": "Biz bilan bog'lanish",
+      "phone": "Telefon:",
+      "mail": "Elektron pochta:",
+      "address": "Manzil:"
+    },
+    "news": {
+      "title": "Yangiliklar blogi"
+    },
+    "gallery": {
+      "title": "Fotogalereya"
+    },
+    "about": {
+      "headerTitle": "Mehmonxonamiz haqida",
+      "section1": {
+        "title": "The Tower Hotelga Xush kelibsiz!"
+      }
+    },
+    "index": {
+      "headerBooking": {
+        "checkIn": "Belgilanish",
+        "entryDay": "Kelish kuni",
+        "departure": "Jo'nab ketish",
+        "departureDay": "Jo'nab ketish kuni",
+        "numberOfGuests": "Mehmonlar soni",
+        "room": "Xona",
+        "adults": "Kattalar",
+        "children": "Bolalar",
+        "roomNumber": "Xonalar",
+        "forChildren": "Bolalar (0-11 yosh)",
+        "typeOfNumber": "Xona turi",
+        "choose": "Tanlash"
+      },
+      "room": "Hona ",
+      "section2": {
+        "title": "Xonalar turi"
+      },
+      "section3": {
+        "title": "Bizning xizmatlarimiz"
+      },
+      "section4": {
+        "title": "Yaqin atrofdagi diqqatga sazovor joylar",
+        "km": "km",
+        "m": "m"
+      },
+      "section5": {
+        "title": "Fotogalereya"
+      },
+      "section6": {
+        "title": "Rejalashtirish va saqlash",
+        "subtitle": "Oldindan toʻlov bilan turar joyni bron qiling va 25% gacha tejang"
+      },
+      "section7": {
+        "title": "Yangiliklar blogi"
+      }
+    },
+  "rooms": {
+    "miniHeader": "Bizning xonalarimiz"
+  },
+  "booking": {
+    "headerTitle": "Band qilish",
+    "headerSubtitle": "Bu bandlov tasdiqlanmagan. Biz sizning so'rovingizni ko'rib chiqamiz va bandlovingizni tasdiqlaymiz.",
+    "form": {
+      "title": "Ma'lumotlarni kiriting",
+      "arrival": "Kelish sanasi",
+      "departure": "Jo'nab ketish sanasi",
+      "adults": "Kattalar",
+      "children": "Bolalar",
+      "surnameEN": "Familiya (ingliz tilida)",
+      "nameEN": "Ism (ingliz tilida)",
+      "number": "Telefon nomer",
+      "email": "Elektron pochta"
+    },
+    "request": {
+      "title": "So'rovlar uchun aloqa ma'lumotlari",
+      "textarea": "So'rovingizni kiriting"
+    },
+    "cancelRule": {
+      "title": "Bekor qilish siyosati",
+      "text": "- Bandlovni bekor qilish yoki o'zgartirishga kelishdan 3 kun oldin soat 12:00 gacha ruxsat beriladi. Agar siz ushbu vaqtdan keyin bekor qilsangiz yoki o'zgartirsangiz yoki kelish kunida ko'rinmasangiz (ko'rsatilmaydi), sizdan turar joyingizning birinchi kechasi narxiga teng to'lov olinadi..",
+      "text2": "- Bandlovni bekor qilish uchun xonani band qilish bo'limiga murojaat qiling.",
+      "phone": "tel.nomer"
+    }
+  },
+  "reviews": {
+    "title": "Ko‘rib chiqish",
+    "surnameEN": "To'liq ismingiz (ingliz tilida)",
+    "country": "Mamlakat",
+    "countryPlaceholder": "Mamlakatni yozing",
+    "notice": "Biz haqimizda habarnoma",
+    "noticeTitle": "sarlavha yozing",
+    "review": "Sharh yozing",
+    "reviewClients": "Mijozlarning sharhlari",
+    "reviewDate": "Yozilgan vaqti:"
+  },
+  "roomInner": {
+    "allComforts": "Barchasi",
+    "servicesTitle": "Qulayliklar va xizmatlar",
+    "services": {
+      "service1": "Fitnes markazi",
+      "service2": "Mini bar",
+      "service3": "Yopiq basseyn",
+      "service4": "Konditsioner",
+      "service5": "Televizor",
+      "service6": "Bepul avtoturargoh",
+      "service7": "Bepul Wi-Fi",
+      "service8": "Shahar ko'rinishi",
+      "service9": "Ajoyib nonushta"
+    },
+    "areaSymbol": "m²",
+    "humenSymbol": "kishi",
+    "filterSymbol": "vannaxona",
+    "filterSymbols": "vannaxonalar",
+    "balconySymbol": "balkon"
+  }
+  }
+}

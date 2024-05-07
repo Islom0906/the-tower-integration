@@ -1,0 +1,29 @@
+#block-search, #block-search * {
+    box-sizing: border-box;
+}
+
+#block-search {
+    background: #FFFFFF;
+    border: 1px solid #8F8170;
+}
+
+@media screen and (min-width: 1024px) and (min-height: 570px) {
+    #block-search.main {
+        position: relative;
+        z-index: 1;
+        margin-top: -300px;
+    }
+}
+
+.be-container {
+    padding: 4px 30px;
+}
+
+#be-booking-form {
+    z-index: 1;
+}
+
+#be-reputation-widget {
+    width: 100%;
+    max-width: 150px;
+}

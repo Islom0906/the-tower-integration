@@ -1,0 +1,17 @@
+
+<svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip615_392">
+			<rect id="Wireless network" width="24.000000" height="24.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip615_392)">
+		<path id="path" d="M2 9.48267C2.29395 9.20361 2.59766 8.93933 2.90918 8.68958C8.51855 4.18713 16.6914 4.45142 22 9.48267" stroke="#808080" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="path" d="M19 12.8995C15.1338 9.03345 8.86621 9.03345 5 12.8995" stroke="#808080" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="path" d="M16 16.1569C13.791 13.9478 10.209 13.9478 8 16.1569" stroke="#808080" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="path" d="M12 20C12.6904 20 13.25 19.4403 13.25 18.75C13.25 18.0597 12.6904 17.5 12 17.5C11.3096 17.5 10.75 18.0597 10.75 18.75C10.75 19.4403 11.3096 20 12 20Z" fill="#808080" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+</svg>

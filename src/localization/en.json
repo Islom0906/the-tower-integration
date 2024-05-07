@@ -1,0 +1,170 @@
+{
+  "translation": {
+    "navbar": {
+      "home" : "Home",
+      "about": "About us",
+      "rooms":"Rooms",
+      "gallery":"Gallery",
+      "contact": "Contact",
+      "news": "News",
+      "searching": "Look for a room"
+
+    },
+    "lang": {
+      "ru": "russian",
+      "en": "english",
+      "uz": "uzbek"
+    },
+    "btn": {
+      "more":"More",
+      "booking":"Booking",
+      "readMore": "Read more",
+      "allNums": "All rooms",
+      "viewAllPhoto": "All photos",
+      "allNews": "All news",
+      "sendMesseng": "Send"
+    },
+    "footer": {
+      "menu": {
+        "title": "Navigation",
+        "href1": "About hotel",
+        "href2": "Rooms",
+        "href3": "Photo gallery",
+        "href4": "News",
+        "href5": "Contacts"
+      },
+      "address": {
+        "title": "Address"
+      },
+      "manager": {
+        "title": "Follow our news"
+      },
+      "miniFooter": {
+        "allrights": "The Tower Hotel. All rights reserved",
+        "siteCreated": "Website created"
+      }
+    },
+    "notFound": {
+      "text": "Room not found"
+    },
+    "links": {
+      "viewReviews": "View reviews"
+    },
+    "contact": {
+      "title": "News blog",
+      "phone": "Phone:",
+      "mail": "Email:",
+      "address": "Address:"
+    },
+    "news": {
+      "title": "News blog"
+    },
+    "gallery": {
+      "title": "Photo gallery"
+    },
+    "about": {
+      "headerTitle": "About our hotel",
+      "section1": {
+        "title": "Welcome to The Tower Hotel!"
+      }
+    },
+    "index": {
+      "headerBooking": {
+       "checkIn": "Check-in",
+       "entryDay": "Entrance day",
+       "departure": "Departure",
+       "departureDay": "Departure day",
+       "numberOfGuests" : "Number of guests",
+       "room": "Rooms",
+       "adults": "Adults ",
+       "children": "Children",
+       "roomNumber": "Room number",
+       "forChildren": "Children (0-11 years old)",
+       "typeOfNumber": "Type of room",
+       "choose": "Choose"
+      },
+      "room": "Room ",
+      "section2": {
+        "title": "Type of rooms"
+      },
+      "section3": {
+        "title": "Our services"
+      },
+      "section4": {
+        "title": "Landmarks nearby",
+        "km": "km",
+        "m": "m"
+      },
+      "section5": {
+        "title": "Photo gallery"
+      },
+      "section6": {
+        "title": "Plan and save",
+        "subtitle": "Book your stay with prepayment and save up to 25%"
+      },
+      "section7": {
+        "title": "News blog"
+      }
+    },
+    "rooms": {
+      "miniHeader": "Our rooms"
+    },
+    "booking": {
+      "headerTitle": "Booking",
+      "headerSubtitle": "This booking is not confirmed. We will review your request and confirm your reservation.",
+      "form": {
+        "title": "Enter data",
+        "arrival": "Arrival date",
+        "departure": "Date of departure",
+        "adults": "Adults",
+        "children": "Children",
+        "surnameEN": "Surname (in english)",
+        "nameEN": "Name (in english)",
+        "number": "Phone number",
+        "email": "E-mail address"
+      },
+      "request": {
+        "title": "Contact information for inquiries",
+        "textarea": "Enter your request"
+      },
+      "cancelRule": {
+        "title": "Cancellation Policy",
+        "text": "- Cancellation or change of reservation is allowed until 12:00 3 days before arrival. If you cancel or make changes after this time or do not show up on your check-in date (no-show), you will be charged a fee equivalent to the cost of the first night of your stay.",
+        "text2": "- To cancel your reservation, please contact our room reservations department.",
+        "phone": "phone number"
+      }
+    },
+    "reviews": {
+      "title": "Review",
+      "surnameEN": "Full name (in English)",
+      "country": "Country",
+      "countryPlaceholder": "Enter your country",
+      "review": "Write a review",
+      "notice": "Notice about us",
+      "noticeTitle": "write a title",
+      "reviewClients": "Customer Reviews",
+      "reviewDate": "Stretched time:"
+
+    },
+    "roomInner": {
+      "allComforts": "Are common",
+      "servicesTitle": "Facilities and services",
+      "services": {
+        "service1": "A fitness center",
+        "service2": "Mini bar",
+        "service3": "Indoor pool",
+        "service4": "Air conditioner",
+        "service5": "TV",
+        "service6": "Free parking",
+        "service7": "Free Wi-Fi",
+        "service8": "City view",
+        "service9": "Excellent breakfast"
+      },
+      "areaSymbol": "m²",
+      "humenSymbol": "person",
+      "filterSymbol": "bathroom",
+      "filterSymbols": "bathrooms",
+      "balconySymbol": "balcony"
+    }
+  }
+}
