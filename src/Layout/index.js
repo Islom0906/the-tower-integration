@@ -1,5 +1,5 @@
 import {Footer, Navbar, TopNav} from "@/components/index";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import Aos from "aos";
 import {useQuery} from "react-query";
 import apiService from "@/service/axois";

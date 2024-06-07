@@ -1,27 +1,27 @@
 import SEO from "@/SEO/SEO";
 import {GalleryZoomInner, SectionUI, MiniHeader} from "@/components";
 import {gallerySEO} from '@/SEO/SEO.config'
-import {useSelector} from "react-redux";
 import axios from "axios";
 import {langSelect} from "@/helper";
 import BeSearchForm from "../components/be-forms/be-search-form";
+import {useTranslation} from "react-i18next";
 
 const Gallery = ({galleryData}) => {
+  const { i18n  } = useTranslation();
 
-    const {lang} = useSelector(state => state.langSlice)
     return (
         <>
             <SEO
                 ogImage={'/logo.png'}
-                title={gallerySEO[lang].title}
-                description={gallerySEO[lang].description}
-                ogTitle={gallerySEO[lang].ogTitle}
-                ogDescription={gallerySEO[lang].ogDescription}
-                twitterHandle={gallerySEO[lang].twitterHandle}
+                title={gallerySEO[i18n.language].title}
+                description={gallerySEO[i18n.language].description}
+                ogTitle={gallerySEO[i18n.language].ogTitle}
+                ogDescription={gallerySEO[i18n.language].ogDescription}
+                twitterHandle={gallerySEO[i18n.language].twitterHandle}
             />
             <div>
                 <MiniHeader img={galleryData?.header_image}
-                            title={langSelect(lang, galleryData?.title_ru, galleryData?.title_en, galleryData?.title_uz)}/>
+                            title={langSelect(i18n.language, galleryData?.title_ru, galleryData?.title_en, galleryData?.title_uz)}/>
             </div>
             <SectionUI padding='py-10'>
                 <BeSearchForm/>

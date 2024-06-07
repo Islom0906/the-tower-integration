@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
-import DropdownUl from "@/components/ui/Dropdown-UI";
+import Image from "next/image";
 
-const Image = dynamic(() => import('next/image'));
 
 const ImgUI = ({ src, alt, priority = false, objectFitContain = false, card = false, quality = 90, imageStyle }) => {
     const [loading, setLoading] = useState(true);

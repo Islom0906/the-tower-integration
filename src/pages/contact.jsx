@@ -1,7 +1,6 @@
 import SEO from '@/SEO/SEO';
 import { SectionTitle, SectionUI , MesengerList } from '@/components/'
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import {contactSEO} from "@/SEO/SEO.config"
 import axios from "axios";
 import {formatPhoneNumber, langSelect} from "@/helper";
@@ -9,17 +8,16 @@ import BeSearchForm from "../components/be-forms/be-search-form";
 
 
 const Contact = ({contact}) => {
-  const {t} = useTranslation()
-  const {lang} = useSelector(state => state.langSlice)
+  const {t , i18n} = useTranslation()
   return (
     <>
       <SEO
               ogImage={'/logo.png'}
-              title={contactSEO[lang].title}
-                description={contactSEO[lang].description}
-                ogTitle={contactSEO[lang].ogTitle}
-                ogDescription={contactSEO[lang].ogDescription}
-                twitterHandle={contactSEO[lang].twitterHandle}
+              title={contactSEO[i18n.language].title}
+                description={contactSEO[i18n.language].description}
+                ogTitle={contactSEO[i18n.language].ogTitle}
+                ogDescription={contactSEO[i18n.language].ogDescription}
+                twitterHandle={contactSEO[i18n.language].twitterHandle}
             />
       <SectionUI bgFigureTopPostion={'-top-20 -left-1/2'} padding={'py-10'}>
         <BeSearchForm/>
@@ -27,7 +25,7 @@ const Contact = ({contact}) => {
           {/* section title */}
           <div>
             <div className="mb-5 md:mb-10">
-              <SectionTitle title={langSelect(lang , contact?.title_ru, contact?.title_en , contact?.title_uz )} justify={'justify-center'} />
+              <SectionTitle title={langSelect(i18n.language , contact?.title_ru, contact?.title_en , contact?.title_uz )} justify={'justify-center'} />
             </div>
             <div data-aos='fade-up'  data-aos-delay='0.2' className="space-y-2 md:space-y-5 text-center font-roboto">
               <a className="block" href={`tel:${contact?.phone}`}>
@@ -60,7 +58,7 @@ const Contact = ({contact}) => {
                     }
                   </span>
                   <span className={'text-[#575757]'}>
-                   { langSelect(lang ,contact?.address_ru , contact?.address_en ,contact?.address_uz )}
+                   { langSelect(i18n.language ,contact?.address_ru , contact?.address_en ,contact?.address_uz )}
                   </span>
                 </p>
               </p>

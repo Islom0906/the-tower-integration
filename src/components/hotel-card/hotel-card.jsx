@@ -1,13 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import {ButtonUI , Slider} from '@/components/index'
 import {RoomsCharacterList} from "@/components";
-import {changleTypeBooking} from "@/slice/booking";
-import {useDispatch} from "react-redux";
 
 
 const HotelCard = ({id, imgs, cardTitle, room_size,capacity ,num_balconies , num_bathrooms,  indexForAos , href}) => {
     const {t} = useTranslation()
-    const dispatch = useDispatch()
 
     const roomTypes = [
         {
@@ -52,7 +49,7 @@ const HotelCard = ({id, imgs, cardTitle, room_size,capacity ,num_balconies , num
          </div>
         </div>
        <div className='flex flex-col w-full justify-between gap-2 mt-2 md:mt-5 sm:flex-row md:items-center'>
-        <ButtonUI paddingFull={true} text={t('btn.booking')} href={'/reservation?room-type=' + roomTypes.filter((roomType) => roomType.roomId === id)[0].beRoomType} onClick={() => dispatch(changleTypeBooking(cardTitle))}  />
+        <ButtonUI paddingFull={true} text={t('btn.booking')} href={'/reservation?room-type=' + roomTypes.filter((roomType) => roomType.roomId === id)[0].beRoomType}   />
         <ButtonUI btnBorder={true} paddingFull={true} href={href}  text={t('btn.more')}  />
        </div>
 

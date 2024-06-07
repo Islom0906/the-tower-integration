@@ -3,9 +3,8 @@ import { EffectFade, Autoplay, Navigation ,Pagination } from "swiper/modules";
 import { ImgUI } from "@/components/";
 import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
-import Skeleton, {SkeletonTheme} from "react-loading-skeleton";
 import {langSelect} from "@/helper";
-import {useSelector} from "react-redux";
+import {useTranslation} from "react-i18next";
 
 const Slider = ({
                   isHeader= false,
@@ -14,10 +13,9 @@ const Slider = ({
   PaginationMod, Quality, PaginationInner,
   isLoading , card
 }) => {
-    const {lang} = useSelector(state => state.langSlice)
+  const { i18n  } = useTranslation();
 
   return (
-    <SkeletonTheme baseColor="#EBEAE8" highlightColor="#D7D3CE">
     <div
       className={`relative bg-transparent h-full ${
         PaginationMod && "pb-6 md:pb-20"
@@ -52,14 +50,12 @@ const Slider = ({
 
                       <h2 data-aos='fade-up' data-aos-delay='0.1'
                           className="text-center header-title w-full max-w-[1000px] drop-shadow-[0_5px_5px_rgba(0,0,0,0.2)] ">{
-
-                        isLoading ? <Skeleton duration={1} height={'100%'}
-                                              width={'100%'}/> : langSelect(lang, slider?.title_ru, slider?.title_en, slider?.title_uz)
+                         langSelect(i18n.language, slider?.title_ru, slider?.title_en, slider?.title_uz)
                       }</h2>
                       {
                           slider.sub_title_ru && <p data-aos='fade-up' data-aos-delay='50'
                                                     className="hidden md:block text-white  text-center max-w-[700px] font-roboto  font-light tracing-[0.48px] sm:text-lg w-full  lg:text-xl xl:text-2xl drop-shadow-[0_2px_2px_rgba(0,0,0, 0.4)]">
-                            {langSelect(lang, slider?.sub_title_ru, slider?.sub_title_en, slider?.sub_title_uz)}
+                            {langSelect(i18n.language, slider?.sub_title_ru, slider?.sub_title_en, slider?.sub_title_uz)}
                           </p>
                       }
                     </div>
@@ -104,7 +100,6 @@ const Slider = ({
         </div>
       )}
     </div>
-    </SkeletonTheme>
   );
 };
 

@@ -1,20 +1,18 @@
-import {useDispatch} from "react-redux";
-import {changleCountChildrenBooking, changleCountOlderBooking, changleCountRoomBooking} from "@/slice/booking";
 
-const InputUl = ({type,  placeholder, labelText, id, changleName,  infoInput, formname , value}) => {
+const InputUl = ({type,  placeholder, labelText, id,  infoInput, formname , value}) => {
 
-    const dispatch = useDispatch()
-    const changleSetValue  = (e) => {
-        if(e.target.value >=0) {
-        if(changleName === 'room') {
-            dispatch(changleCountRoomBooking(e.target.value))
-        }else  if(changleName === 'old') {
-            dispatch(changleCountOlderBooking(e.target.value))
-        }else  if(changleName === 'childer') {
-            dispatch(changleCountChildrenBooking(e.target.value))
-        }
-        }
-    }
+    // const dispatch = useDispatch()
+    // const changleSetValue  = (e) => {
+    //     if(e.target.value >=0) {
+    //     if(changleName === 'room') {
+    //         dispatch(changleCountRoomBooking(e.target.value))
+    //     }else  if(changleName === 'old') {
+    //         dispatch(changleCountOlderBooking(e.target.value))
+    //     }else  if(changleName === 'childer') {
+    //         dispatch(changleCountChildrenBooking(e.target.value))
+    //     }
+    //     }
+    // }
 
 
     return (

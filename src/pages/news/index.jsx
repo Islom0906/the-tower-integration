@@ -1,7 +1,6 @@
 import SEO from '@/SEO/SEO'
 import {ButtonUI, MiniHeader, NewsCard, SectionUI} from '@/components'
 import {newsSEO} from '@/SEO/SEO.config'
-import { useSelector } from 'react-redux'
 import axios from "axios";
 import apiService from "@/service/axois";
 import {useQuery} from "react-query";
@@ -10,9 +9,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import {AiOutlineLoading3Quarters} from "react-icons/ai";
 import {langSelect} from "@/helper";
 import BeSearchForm from "../../components/be-forms/be-search-form";
+import {useTranslation} from "react-i18next";
 
 const index = ({newsHeader}) => {
-  const {lang} = useSelector(state => state.langSlice)
+  const { i18n  } = useTranslation();
   const [page, setPage] = useState(1)
   const [productInfinity, setProductInfinity] = useState([])
   const [hasMore, setHasMore] = useState(false)
@@ -62,14 +62,14 @@ const index = ({newsHeader}) => {
     <div>
        <SEO
               ogImage={'/logo.png'}
-              title={newsSEO[lang].title}
-                description={newsSEO[lang].description}
-                ogTitle={newsSEO[lang].ogTitle}
-                ogDescription={newsSEO[lang].ogDescription}
-                twitterHandle={newsSEO[lang].twitterHandle}
+              title={newsSEO[i18n.language ].title}
+                description={newsSEO[i18n.language ].description}
+                ogTitle={newsSEO[i18n.language ].ogTitle}
+                ogDescription={newsSEO[i18n.language ].ogDescription}
+                twitterHandle={newsSEO[i18n.language ].twitterHandle}
             />
       <div>
-        <MiniHeader img={newsHeader?.header_image} title={langSelect(lang , newsHeader?.title_ru, newsHeader?.title_en , newsHeader?.title_uz )}/>
+        <MiniHeader img={newsHeader?.header_image} title={langSelect(i18n.language  , newsHeader?.title_ru, newsHeader?.title_en , newsHeader?.title_uz )}/>
       </div>
       <SectionUI padding={'py-10'}>
         <BeSearchForm/>
@@ -89,7 +89,7 @@ const index = ({newsHeader}) => {
                           key={news?.id}
                           img={news?.main_image}
                           date={news?.created_at}
-                          decr={langSelect(lang ,news?.title_ru, news?.title_en , news?.title_uz )}
+                          decr={langSelect(i18n.language  ,news?.title_ru, news?.title_en , news?.title_uz )}
                           href={`news/${news?.slug}`}/>
                   ))
                 }

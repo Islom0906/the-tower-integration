@@ -1,8 +1,6 @@
 import {DropdownUI} from "@/components";
 import {formatPhoneNumber, langSelect} from "@/helper";
-import {changleLang} from "@/slice/lang";
 import {useTranslation} from "react-i18next";
-import {useDispatch, useSelector} from "react-redux";
 import {FaFacebookSquare, FaTelegram} from "react-icons/fa";
 import {RiInstagramFill} from "react-icons/ri";
 import BeReputationForm from "../be-forms/be-reputation-form";
@@ -11,12 +9,10 @@ import {useRouter} from "next/router";
 
 const TopNav = ({contact}) => {
     const {t, i18n} = useTranslation();
-    const dispatch = useDispatch();
     const handleChangleLang = (lang) => {
         i18n.changeLanguage(lang.value)
-        dispatch(changleLang(lang.value))
     }
-    const {lang} = useSelector(state => state.langSlice)
+
     const router = useRouter();
 
 
@@ -53,7 +49,7 @@ const TopNav = ({contact}) => {
                     <a href={`tel:${contact?.phone}`} className='hidden sm:block'>{
                         formatPhoneNumber(contact?.phone)
                     }</a>
-                    <p className='hidden lg:block'> {langSelect(lang, contact?.address_ru, contact?.address_en, contact?.address_uz)}</p>
+                    <p className='hidden lg:block'> {langSelect(i18n.language, contact?.address_ru, contact?.address_en, contact?.address_uz)}</p>
                 </div>
             </div>
         </div>

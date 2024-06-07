@@ -1,26 +1,24 @@
 import SEO from '@/SEO/SEO';
 import {ImgBoxFlex, ImgUI, MiniHeader, SectionTitle, SectionUI, Slider} from '@/components';
 import { aboutUsSEO } from '@/SEO/SEO.config';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import axios from "axios";
-import {useEffect} from "react";
 import {langSelect} from "@/helper";
 import BeSearchForm from "../components/be-forms/be-search-form";
+import {useTranslation} from "react-i18next";
 
 const About = ({about ,services}) => {
-    const {lang} = useSelector(state => state.langSlice)
+  const { i18n  } = useTranslation();
 
 
   return (
       <div className="wrapper">
         <SEO
               ogImage={'/logo.png'}
-              title={aboutUsSEO[lang].title}
-                description={aboutUsSEO[lang].description}
-                ogTitle={aboutUsSEO[lang].ogTitle}
-                ogDescription={aboutUsSEO[lang].ogDescription}
-                twitterHandle={aboutUsSEO[lang].twitterHandle}
+              title={aboutUsSEO[i18n.language].title}
+                description={aboutUsSEO[i18n.language].description}
+                ogTitle={aboutUsSEO[i18n.language].ogTitle}
+                ogDescription={aboutUsSEO[i18n.language].ogDescription}
+                twitterHandle={aboutUsSEO[i18n.language].twitterHandle}
             />
               <MiniHeader imageStyle={'object-center'} img={about?.header?.image} title={langSelect(lang ,about?.header?.title_ru ,about?.header?.title_en , about?.header?.title_uz)}/>
               <SectionUI bgFigureTopPostion={'top-0 left-0'} bgFigureBottomPostion={'bottom-0 left-0'}
@@ -28,7 +26,7 @@ const About = ({about ,services}) => {
                   <BeSearchForm/>
               <div className="relative space-y-5 md:space-y-10 z-5">
                   <SectionTitle
-                      lang={lang}
+                      lang={i18n.language}
                       title_ru={about?.title_ru}
                       title_uz={about?.title_uz}
                       title_en={about?.title_en}

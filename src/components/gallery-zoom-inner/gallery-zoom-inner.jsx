@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import {  useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Autoplay, EffectFade, FreeMode, Navigation, Thumbs} from 'swiper/modules';
 import {ImgUI} from "@/components";

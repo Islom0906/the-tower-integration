@@ -1,4 +1,4 @@
-import {Booking , Slider} from "@/components";
+import { Slider} from "@/components";
 
 const Header = ({home}) => {
   return (
@@ -7,7 +7,6 @@ const Header = ({home}) => {
     
     <header className='relative h-screen'> 
       <Slider  SliderContent={home} isHeader={true}   PaginationMod={false} priority={true}  />
-        {/*<Booking/>*/}
     </header>
     </>
   )

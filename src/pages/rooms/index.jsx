@@ -6,28 +6,26 @@ import {
 import { useTranslation } from "react-i18next";
 import SEO from "@/SEO/SEO";
 import {roomsSEO} from "@/SEO/SEO.config"
-import { useSelector } from "react-redux";
 import axios from "axios";
 import {langSelect} from "@/helper";
 import BeSearchForm from "../../components/be-forms/be-search-form";
 
 const index = ({rooms , roomsHeader}) => {
-    const {t} = useTranslation()
-    const {lang} = useSelector(state => state.langSlice)
+  const { i18n  } = useTranslation();
 
     return (
         <div>
 
             <SEO
               ogImage={'/logo.png'}
-              title={roomsSEO[lang]?.title}
-                description={roomsSEO[lang]?.description}
-                ogTitle={roomsSEO[lang]?.ogTitle}
-                ogDescription={roomsSEO[lang]?.ogDescription}
-                twitterHandle={roomsSEO[lang]?.twitterHandle}
+              title={roomsSEO[i18n.language]?.title}
+                description={roomsSEO[i18n.language]?.description}
+                ogTitle={roomsSEO[i18n.language]?.ogTitle}
+                ogDescription={roomsSEO[i18n.language]?.ogDescription}
+                twitterHandle={roomsSEO[i18n.language]?.twitterHandle}
             />
             <div>
-                <MiniHeader img={roomsHeader.header_image} title={langSelect(lang , roomsHeader?.title_ru , roomsHeader?.title_en , roomsHeader?.title_uz)}/>
+                <MiniHeader img={roomsHeader.header_image} title={langSelect(i18n.language , roomsHeader?.title_ru , roomsHeader?.title_en , roomsHeader?.title_uz)}/>
             </div>
             <SectionUI bgFigureTopPostion={'top-0 left-0'}
                        padding={'py-10 lg:pb-[90px]'}>

@@ -10,7 +10,6 @@ import {
 } from "../../components"
 import SEO from "@/SEO/SEO";
 import {indexSEO} from '@/SEO/SEO.config'
-import { useSelector } from "react-redux";
 import {useQuery} from "react-query";
 import apiService from "@/service/axois";
 import {useRouter} from "next/router";
@@ -22,8 +21,9 @@ import BeSearchForm from "../../components/be-forms/be-search-form";
 
 const Room = () => {
     const {t} = useTranslation()
-    const {lang} = useSelector(state => state.langSlice)
     const router = useRouter()
+    const { i18n  } = useTranslation();
+
     const {rooms}=router.query
     const { data: room  , refetch: refetchRoom , isLoading: isLoadingRoom } = useQuery(["room" , rooms], () =>
         apiService.getDataByID(  '/rooms' ,rooms) , { enabled: false}
@@ -116,21 +116,21 @@ const Room = () => {
 
              <SEO
                 ogImage={'/logo.png'}
-                title={langSelect(lang , room?.title_ru , room?.title_en , room?.title_uz)}
-                description={indexSEO[lang].description}
-                ogTitle={langSelect(lang , room?.title_ru , room?.title_en , room?.title_uz)}
-                ogDescription={indexSEO[lang].ogDescription}
-                twitterHandle={indexSEO[lang].twitterHandle}
+                title={langSelect(i18n.language , room?.title_ru , room?.title_en , room?.title_uz)}
+                description={indexSEO[i18n.language ].description}
+                ogTitle={langSelect(i18n.language , room?.title_ru , room?.title_en , room?.title_uz)}
+                ogDescription={indexSEO[i18n.language ].ogDescription}
+                twitterHandle={indexSEO[i18n.language ].twitterHandle}
             />
             <div className={'w-full container'}>
                 <BeSearchForm/>
                 <div className="pb-5 md:pb-10">
-                    <SectionTitle title={langSelect(lang , room?.title_ru , room?.title_en , room?.title_uz)} justify={'justify-center'}/>
+                    <SectionTitle title={langSelect(i18n.language , room?.title_ru , room?.title_en , room?.title_uz)} justify={'justify-center'}/>
                 </div>
                 <RoomInnerSlider isLoadingRoom={!isLoadingRoom} images={room?.images} />
                 <p data-aos='fade-left' className=" font-roboto lg:text-xl font-light pt-5 md:pt-10">
                     {
-                        langSelect(lang , room?.description_ru , room?.description_en , room?.description_uz)
+                        langSelect(i18n.language , room?.description_ru , room?.description_en , room?.description_uz)
                     }
                 </p>
             </div>
@@ -157,7 +157,7 @@ const Room = () => {
                         {room?.room_characteristics?.map((item, index) => (
                             <li data-aos='fade-left' data-aos-delay={`${index}9`} key={item.id} className="flex items-center gap-2 md:gap-x-[10px]">
                                 <IoMdCheckmark className="md:text-xl text-customGrey" />
-                                {langSelect(lang , item?.title_ru , item?.title_en , item?.title_uz)}
+                                {langSelect(i18n.language  , item?.title_ru , item?.title_en , item?.title_uz)}
                             </li>
                         ))}
                     </ul>
@@ -172,7 +172,7 @@ const Room = () => {
            <div className="bg-white w-full duration-300 bottom-0 left-0 righ-0 sticky z-[10] shadow-sm py-5 border-t border-brown">
                 <div className="container flex flex-wrap items-center  justify-center md:justify-between gap-y-3 gap-x-5">
                     <div className="text-2xl font-elegance shrink-0">
-                        {t('index.room')} {langSelect(lang , room?.title_ru , room?.title_en , room?.title_uz)}
+                        {t('index.room')} {langSelect(i18n.language  , room?.title_ru , room?.title_en , room?.title_uz)}
                     </div>
                     <div
                         className='flex shrink-0 leading-normal divide-x divide-iron/50 gap-y-1 items-center text-iron font-roboto text-sm md:text-base lg:text-lg tracking-[0.4px] xl:text-xl '>

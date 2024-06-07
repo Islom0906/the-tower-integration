@@ -6,15 +6,12 @@ import {useTranslation} from "react-i18next";
 import {useQuery, useQueryClient} from "react-query";
 import useDebounce from "@/hook/useDebounce";
 import apiService from "@/service/axois";
-import {langSelect, PageWayRouter} from "@/helper";
-import {useSelector} from "react-redux";
-import {useRouter} from "next/router";
+import {langSelect} from "@/helper";
 
 function SearchPanel() {
     const queryClient = useQueryClient();
     const [searchPanel, setSearchPanel] = useState(false)
-    const { t } = useTranslation()
-    const {lang} = useSelector(state => state.langSlice)
+    const { t, i18n } = useTranslation()
     const [inputValue, setInputValue] = useState('')
     const debounceInputValue = useDebounce(inputValue, 700)
 
@@ -82,7 +79,7 @@ function SearchPanel() {
                                                     imgs={card?.images}
                                                     key={card.id}
                                                     id={card.id}
-                                                    cardTitle={langSelect(lang ,card?.title_ru, card?.title_en , card?.title_uz )}
+                                                    cardTitle={langSelect(i18n.language ,card?.title_ru, card?.title_en , card?.title_uz )}
                                                     descriptions={card?.information}
                                                     capacity={card?.capacity}
                                                     num_balconies={card?.num_balconies}

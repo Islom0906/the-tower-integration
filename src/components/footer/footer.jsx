@@ -2,14 +2,12 @@ import {ImgUI, FooterContent, MesengerList} from '@/components'
 import { useTranslation } from 'react-i18next'
 import {formatPhoneNumber, langSelect} from "@/helper";
 import Link from "next/link";
-import {useSelector} from "react-redux";
 import {useRouter} from "next/router";
 
 
 
 const Footer = ({contact}) => {
-  const {t} = useTranslation()
-  const {lang} = useSelector(state => state.langSlice)
+  const {t, i18n} = useTranslation()
   const router = useRouter();
 
   const FooterContentData = {
@@ -40,7 +38,7 @@ const Footer = ({contact}) => {
     },
      location: {
       title: t('footer.address.title'),
-      paragraph: langSelect(lang , contact?.address_ru , contact?.address_en, contact?.address_uz) ,
+      paragraph: langSelect(i18n.language , contact?.address_ru , contact?.address_en, contact?.address_uz) ,
       linkReiews: '/reviews'
     },
     managers : {

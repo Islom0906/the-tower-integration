@@ -3,7 +3,6 @@ import {ImgUI} from "@/components";
 const SectionUI = ({children , bgGold, padding  , bgFigureTopPostion  ,bgFigureBottomPostion,centerFigure , langmark}) => {
 
 
-  // bgFigureTopPostion  2ta qiymat keliw kk (top left  yoki bottom right)
   return (
     <>
         <section className={`relative overflow-hidden ${bgGold ? 'bg-brown py-10  md:py-[90px]' : `bg-white  ${padding}`}`}>

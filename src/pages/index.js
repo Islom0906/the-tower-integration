@@ -1,28 +1,24 @@
 import SEO from '@/SEO/SEO'
 import {indexSEO} from '@/SEO/SEO.config'
-import {ImgUI,  Header, SectionTitle, ButtonUI  , SectionUI,  LocationInfos ,SwiperSlider, GallerySlider} from '@/components/'
+import {ImgUI,  Header, SectionTitle, ButtonUI  , SectionUI,  LocationInfos ,SwiperSlider} from '@/components/'
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
 import axios from "axios";
 import {langSelect} from "@/helper";
 import BeSearchForm from "../components/be-forms/be-search-form";
-
-
+import dynamic from "next/dynamic";
+const GallerySlider = dynamic(() => import('@/components/gallery-slider/gallery-slider') , { ssr: false })
 
 const Home = ({home , about , rooms , services , news , landmarks ,gallery}) => {
-    // landmarks
-    const {t} = useTranslation()
-    const {lang} = useSelector(state => state.langSlice)
-    //
+    const {t , i18n} = useTranslation()
     return (
         <div>
             <SEO
               ogImage={'/logo.png'}
-              title={indexSEO[lang].title}
-              description={indexSEO[lang].description}
-              ogTitle={indexSEO[lang].ogTitle}
-              ogDescription={indexSEO[lang].ogDescription}
-              twitterHandle={indexSEO[lang].twitterHandle}
+              title={indexSEO[i18n.language].title}
+              description={indexSEO[i18n.language].description}
+              ogTitle={indexSEO[i18n.language].ogTitle}
+              ogDescription={indexSEO[i18n.language].ogDescription}
+              twitterHandle={indexSEO[i18n.language].twitterHandle}
             />
             <Header home={home} />
             <section className="py-10">
@@ -34,7 +30,7 @@ const Home = ({home , about , rooms , services , news , landmarks ,gallery}) => 
                 <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
                     <div className="space-y-3 md:space-y-5 ">
                         <SectionTitle styleSubtitle={'text-start'} title_ru={about?.title_ru} title_en={about?.title_en} title_uz={about?.title_uz} />
-                        <p data-aos='fade-up' data-aos-delay='100' className="text-justify section-text"> {langSelect(lang ,about?.sub_title_ru, about?.sub_title_en , about?.sub_title_uz )} </p>
+                        <p data-aos='fade-up' data-aos-delay='100' className="text-justify section-text"> {langSelect(i18n.language ,about?.sub_title_ru, about?.sub_title_en , about?.sub_title_uz )} </p>
                         <div className="flex justify-center md:justify-start" data-aos='fade-up' data-aos-delay='120'>
                             <ButtonUI btnNews={true} text={t('btn.readMore')} btnBorder={true} href={'/about'}/>
                         </div>
@@ -69,7 +65,7 @@ const Home = ({home , about , rooms , services , news , landmarks ,gallery}) => 
                     <div className='grid grid-cols-2 xl:grid-cols-3 xl:gap-y-5 gap-5 md:gap-x-20 2xl:gap-x-[150px] py-10'>
                         {
                             landmarks?.map(item => (
-                                <LocationInfos key={item?.id} title={langSelect(lang , item?.title_ru, item?.title_en , item?.title_uz )} icon={item?.image} locations={item?.landmarks} />
+                                <LocationInfos key={item?.id} title={langSelect(i18n.language , item?.title_ru, item?.title_en , item?.title_uz )} icon={item?.image} locations={item?.landmarks} />
                             ))
                         }
                     </div>
