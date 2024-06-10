@@ -20,7 +20,7 @@ const About = ({about ,services}) => {
                 ogDescription={aboutUsSEO[i18n.language].ogDescription}
                 twitterHandle={aboutUsSEO[i18n.language].twitterHandle}
             />
-              <MiniHeader imageStyle={'object-center'} img={about?.header?.image} title={langSelect(lang ,about?.header?.title_ru ,about?.header?.title_en , about?.header?.title_uz)}/>
+              <MiniHeader imageStyle={'object-center'} img={about?.header?.image} title={langSelect(i18n.language ,about?.header?.title_ru ,about?.header?.title_en , about?.header?.title_uz)}/>
               <SectionUI bgFigureTopPostion={'top-0 left-0'} bgFigureBottomPostion={'bottom-0 left-0'}
                      padding={"py-10"}>
                   <BeSearchForm/>
