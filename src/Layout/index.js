@@ -10,16 +10,27 @@ const Layout = ({ children }) => {
         apiService.getData( '/pages/contact') , { enabled: false}
     );
 
-    useEffect(() =>{
-       contactRefetch()
-    } , [])
+  useEffect(() => {
+    let isMounted = true;
+    const fetchData = async () => {
+      if (isMounted) {
+        await contactRefetch();
+      }
+    };
+    fetchData();
+    return () => {
+      isMounted = false;
+    };
+  }, [contactRefetch]);
 
-    useEffect(() => {
-            Aos.init({
-                once: true
-            })
-    } , [])
-
+  useEffect(() => {
+    Aos.init({
+      once: true
+    });
+    return () => {
+      Aos.refresh();
+    };
+  }, []);
 
     return (
         <div className={'font-openSans'}>

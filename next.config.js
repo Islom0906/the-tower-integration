@@ -1,3 +1,8 @@
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
@@ -10,8 +15,8 @@ const nextConfig = {
       },
     ],
     deviceSizes: [450, 640, 768, 1024, 1280, 1536],
-    // unoptimized:true
-
   },
 };
-export default nextConfig;
+// export default nextConfig;
+
+module.exports = withBundleAnalyzer(nextConfig)

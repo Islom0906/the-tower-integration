@@ -11,7 +11,7 @@ const Slider = ({
                     priority= false,
   SliderContent,
   PaginationMod, Quality, PaginationInner,
-  isLoading , card
+  card
 }) => {
   const { i18n  } = useTranslation();
 

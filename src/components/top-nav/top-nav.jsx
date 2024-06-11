@@ -46,10 +46,10 @@ const TopNav = ({contact}) => {
                 <BeReputationForm/>
                 <div className='flex justify-end gap-x-2 xl:gap-x-10 items-center font-roboto text-sm text-white  '>
                     <DropdownUI list={langList} onClick={handleChangleLang}/>
-                    <a href={`tel:${contact?.phone}`} className='hidden sm:block'>{
+                    <a href={`tel:${contact?.phone}`} className='hidden sm:block flex-shrink-0'>{
                         formatPhoneNumber(contact?.phone)
                     }</a>
-                    <p className='hidden lg:block'> {langSelect(i18n.language, contact?.address_ru, contact?.address_en, contact?.address_uz)}</p>
+                    <p className='hidden xl:block w-[100%] line-clamp-1 h-[25px]'> {langSelect(i18n.language, contact?.address_ru, contact?.address_en, contact?.address_uz)}</p>
                 </div>
             </div>
         </div>

@@ -1,29 +1,16 @@
 import SEO from '@/SEO/SEO'
-import { SectionUI, Slider } from '@/components'
-import  {useEffect} from 'react'
+import { SectionUI } from '@/components'
 import { LuCalendarRange } from 'react-icons/lu'
-import {useQuery} from "react-query";
-import apiService from "@/service/axois";
 import {useRouter} from "next/router";
 import {formatDate, langSelect} from "@/helper";
 import BeSearchForm from "../../components/be-forms/be-search-form";
 import {useTranslation} from "react-i18next";
-
-const  News = () => {
+import axios from "axios";
+import dynamic  from "next/dynamic";
+const Slider = dynamic(() => import('@/components/slider/slider'),{ssr:false})
+const  News = ({newsInner}) => {
   const router = useRouter()
   const { i18n  } = useTranslation();
-
-  const {news}=router.query
-  const { data: newsInner  , refetch: refetchNewsInner } = useQuery(["newsInner" , news], () =>
-      apiService.getDataByID(  '/pages/news' ,news) , { enabled: false}
-  );
-
-  useEffect(() => {
-    if(news) {
-      refetchNewsInner()
-    }
-  } ,  [news])
-
 
 
 
@@ -40,7 +27,6 @@ const  News = () => {
         <BeSearchForm/>
         <div data-aos='fade-in' className='relative z-[5] md:float-left w-full lg:w-[450px] xl:w-[650px] h-[275px] xl:h-[350px] md:mr-10 mb-5'>
           <Slider SliderContent={newsInner?.images}  PaginationInner={true} />
-        {/*  SliderContent={newsImage}*/}
         </div>
         <h3 data-aos='fade-left' className='text-xl 2xl:text-2xl font-elegance font-semibold'>
             {
@@ -62,5 +48,18 @@ const  News = () => {
         </p>
     </SectionUI>
     </>
-  )} 
+  )}
+
+export async function getServerSideProps({ params }) {
+  const { news } = params;
+
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/pages/news/${news}`);
+  const newsInner = res.data;
+  return {
+    props: {
+      newsInner,
+    },
+  };
+}
+
 export default News

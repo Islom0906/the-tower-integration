@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next"
 import { RxInfoCircled } from "react-icons/rx";
 import { IoMdCheckmark } from "react-icons/io";
 import {
-    ButtonUI, GallerySlider,
+    ButtonUI,
     ImgUI,
     RoomInnerSlider,
     SectionTitle,
@@ -10,24 +10,18 @@ import {
 } from "../../components"
 import SEO from "@/SEO/SEO";
 import {indexSEO} from '@/SEO/SEO.config'
-import {useQuery} from "react-query";
-import apiService from "@/service/axois";
-import {useRouter} from "next/router";
-import {useEffect} from "react";
 import {langSelect} from "@/helper";
 import {MdBalcony, MdOutlineBathroom, MdOutlineBedroomParent, MdOutlinePhotoSizeSelectSmall} from "react-icons/md";
 import BeSearchForm from "../../components/be-forms/be-search-form";
+import axios from "axios";
+import dynamic from "next/dynamic";
+const GallerySlider = dynamic(() => import('@/components/gallery-slider/gallery-slider'), {ssr:false} )
 
-
-const Room = () => {
+const Room = ({room}) => {
     const {t} = useTranslation()
-    const router = useRouter()
     const { i18n  } = useTranslation();
 
-    const {rooms}=router.query
-    const { data: room  , refetch: refetchRoom , isLoading: isLoadingRoom } = useQuery(["room" , rooms], () =>
-        apiService.getDataByID(  '/rooms' ,rooms) , { enabled: false}
-    );
+
 
     const services = [
         {
@@ -104,15 +98,9 @@ const Room = () => {
         },
     ]
 
-    useEffect(() => {
-        if(rooms) {
-            refetchRoom()
-        }
-    } ,  [rooms])
-
 
     return (
-        <div className="wrapper pt-10 relative">
+        <div className="wrapper pt-10 relative ">
 
              <SEO
                 ogImage={'/logo.png'}
@@ -127,7 +115,7 @@ const Room = () => {
                 <div className="pb-5 md:pb-10">
                     <SectionTitle title={langSelect(i18n.language , room?.title_ru , room?.title_en , room?.title_uz)} justify={'justify-center'}/>
                 </div>
-                <RoomInnerSlider isLoadingRoom={!isLoadingRoom} images={room?.images} />
+                <RoomInnerSlider images={room?.images} />
                 <p data-aos='fade-left' className=" font-roboto lg:text-xl font-light pt-5 md:pt-10">
                     {
                         langSelect(i18n.language , room?.description_ru , room?.description_en , room?.description_uz)
@@ -197,5 +185,15 @@ const Room = () => {
         </div>
     )
 }
+export async function getServerSideProps({ params }) {
+    const { rooms } = params;
 
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/rooms/${rooms}`);
+    const room = res.data;
+    return {
+        props: {
+            room,
+        },
+    };
+}
 export default Room
